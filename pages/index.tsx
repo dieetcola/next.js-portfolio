@@ -1,12 +1,32 @@
+import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
-import styles from '@/styles/Home.module.css';
 
-const inter = Inter({ subsets: ['latin'] });
-import { Link } from '@chakra-ui/next-js';
+import {
+  Box,
+  Center,
+  Flex,
+  HStack,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+} from '@chakra-ui/react';
+import { BiLogoGithub, BiLogoLinkedin, BiMoon } from 'react-icons/bi';
+import {
+  Icon,
+  IconButton,
+  Button,
+  SimpleGrid,
+  GridItem,
+  useColorMode,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 export default function Home() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const bg = useColorModeValue('red.500', 'red.200');
+  const color = useColorModeValue('white', 'gray.800');
   return (
     <>
       <Head>
@@ -15,9 +35,78 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Link href='/about' color='blue.400' _hover={{ color: 'blue.500' }}>
-        About
-      </Link>
+
+      <Flex
+        // bg={bg}
+        // color={color}
+        height={'80vh'}
+        flexDir='column'
+        alignContent={'center'}
+        justifyContent={'center'}>
+        <Text textStyle='h1'>
+          I am a passionate Junior full - stack developer based in Tbilisi, Georgia, aiming on
+          crafting great - looking software products. I focus on details, accessibility and writing
+          maintainable code.
+        </Text>
+        <HStack mt={5}>
+          {/* The default icon size is 1em (16px) */}
+          {/* <Icon as={BiLogoGithub} /> */}
+
+          {/* Use the `boxSize` prop to change the icon size */}
+          {/* <Icon as={BiLogoLinkedin} boxSize={6} /> */}
+
+          {/* Use the `color` prop to change the icon color */}
+          {/* <Icon as={BiMoon} w={8} h={8} /> */}
+          <IconButton
+            // isRound={true}
+            variant='outline'
+            colorScheme='teal'
+            aria-label='Done'
+            fontSize='20px'
+            icon={<BiLogoGithub />}
+          />
+          <IconButton
+            // isRound={true}
+            variant='outline'
+            colorScheme='teal'
+            aria-label='Done'
+            fontSize='20px'
+            icon={<BiLogoLinkedin />}
+          />
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              // isRound={true}
+              variant='outline'
+              colorScheme='teal'
+              aria-label='Done'
+              fontSize='20px'
+              icon={<BiMoon />}
+            />
+            {/* <IconButton
+              // isRound={true}
+              variant='outline'
+              colorScheme='teal'
+              aria-label='Done'
+              fontSize='20px'
+              icon={<BiMoon />}
+            /> */}
+            <MenuList>
+              <MenuItem>Light</MenuItem>
+              <MenuItem>Dark</MenuItem>
+              <MenuItem>System</MenuItem>
+            </MenuList>
+          </Menu>
+        </HStack>
+        {/* <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <GridItem>fsdfsf</GridItem>
+          <GridItem>dfsdfd</GridItem>
+          <GridItem>dfsdf</GridItem>
+          <GridItem>fdsfdd</GridItem>
+        </SimpleGrid> */}
+
+        {/* <Button onClick={toggleColorMode}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</Button> */}
+      </Flex>
     </>
   );
 }
