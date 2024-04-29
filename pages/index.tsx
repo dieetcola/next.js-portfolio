@@ -12,7 +12,7 @@ import {
   MenuList,
   Text,
 } from '@chakra-ui/react';
-import { BiLogoGithub, BiLogoLinkedin, BiMoon } from 'react-icons/bi';
+import { BiLogoGithub, BiMailSend, BiLogoLinkedin, BiMoon } from 'react-icons/bi';
 import {
   Icon,
   IconButton,
@@ -21,12 +21,16 @@ import {
   GridItem,
   useColorMode,
   useColorModeValue,
+  MenuOptionGroup,
+  MenuItemOption,
 } from '@chakra-ui/react';
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
+  console.log(colorMode);
   const bg = useColorModeValue('red.500', 'red.200');
   const color = useColorModeValue('white', 'gray.800');
+
   return (
     <>
       <Head>
@@ -43,24 +47,27 @@ export default function Home() {
         flexDir='column'
         alignContent={'center'}
         justifyContent={'center'}>
+        {/* Text */}
         <Text textStyle='h1'>
           I am a passionate Junior full - stack developer based in Tbilisi, Georgia, aiming on
           crafting great - looking software products. I focus on details, accessibility and writing
           maintainable code.
         </Text>
+
+        {/* Icons */}
         <HStack mt={5}>
-          {/* The default icon size is 1em (16px) */}
-          {/* <Icon as={BiLogoGithub} /> */}
-
-          {/* Use the `boxSize` prop to change the icon size */}
-          {/* <Icon as={BiLogoLinkedin} boxSize={6} /> */}
-
-          {/* Use the `color` prop to change the icon color */}
-          {/* <Icon as={BiMoon} w={8} h={8} /> */}
+          <IconButton
+            // size='xl'
+            variant='outline'
+            colorScheme='gray'
+            aria-label='Done'
+            fontSize='20px'
+            icon={<BiMailSend />}
+          />
           <IconButton
             // isRound={true}
             variant='outline'
-            colorScheme='teal'
+            colorScheme='gray'
             aria-label='Done'
             fontSize='20px'
             icon={<BiLogoGithub />}
@@ -68,36 +75,24 @@ export default function Home() {
           <IconButton
             // isRound={true}
             variant='outline'
-            colorScheme='teal'
+            colorScheme='gray'
             aria-label='Done'
             fontSize='20px'
             icon={<BiLogoLinkedin />}
           />
-          <Menu>
-            <MenuButton
-              as={IconButton}
-              // isRound={true}
-              variant='outline'
-              colorScheme='teal'
-              aria-label='Done'
-              fontSize='20px'
-              icon={<BiMoon />}
-            />
-            {/* <IconButton
-              // isRound={true}
-              variant='outline'
-              colorScheme='teal'
-              aria-label='Done'
-              fontSize='20px'
-              icon={<BiMoon />}
-            /> */}
-            <MenuList>
-              <MenuItem>Light</MenuItem>
-              <MenuItem>Dark</MenuItem>
-              <MenuItem>System</MenuItem>
-            </MenuList>
-          </Menu>
+          <IconButton
+            // isRound={true}
+            onClick={toggleColorMode}
+            // size='xl'
+            variant='outline'
+            colorScheme='gray'
+            aria-label='Done'
+            fontSize='20px'
+            icon={colorMode === 'light' ? <BiMoon /> : <BiLogoGithub />}
+          />
         </HStack>
+
+        {/* Works */}
         {/* <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem>fsdfsf</GridItem>
           <GridItem>dfsdfd</GridItem>
