@@ -169,6 +169,16 @@ const buttonTheme = defineStyleConfig({
   // sizes: { xl },
 });
 
+const custom = defineStyle({
+  color: 'yellow.500',
+  fontFamily: 'mono',
+  fontWeight: 'semibold',
+  // let's also provide dark mode alternatives
+  _dark: {
+    color: 'yellow.300',
+  },
+});
+
 const theme = extendTheme({
   config,
   styles,
@@ -178,6 +188,7 @@ const theme = extendTheme({
   components: {
     Button: buttonTheme,
     Menu: menuTheme,
+    // Heading: headingTheme,
   },
   // semanticTokens
 });

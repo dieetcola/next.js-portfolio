@@ -5,6 +5,7 @@ import {
   Box,
   Center,
   Flex,
+  Grid,
   HStack,
   Menu,
   MenuButton,
@@ -23,7 +24,24 @@ import {
   useColorModeValue,
   MenuOptionGroup,
   MenuItemOption,
+  Heading,
+  Divider,
 } from '@chakra-ui/react';
+
+const projects = [
+  {
+    name: 'Analytics',
+    description: 'Complete front-end build to allow Icon to sell custom merchandise',
+  },
+  {
+    name: 'Analytics',
+    description: 'Complete front-end build to allow Icon to sell custom merchandise',
+  },
+  {
+    name: 'Analytics',
+    description: 'comming soon...',
+  },
+];
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -93,13 +111,33 @@ export default function Home() {
         </HStack>
 
         {/* Works */}
-        {/* <SimpleGrid columns={[1, 2, 2]} gap={6}>
-          <GridItem>fsdfsf</GridItem>
-          <GridItem>dfsdfd</GridItem>
-          <GridItem>dfsdf</GridItem>
-          <GridItem>fdsfdd</GridItem>
-        </SimpleGrid> */}
 
+        <Grid templateColumns='repeat(2, 1fr)' gap={12} mt={16}>
+          {projects.map((item) => (
+            <GridItem w='100%' h='10' bg='black'>
+              <Heading as='h2' size='md' sx={{ textTransform: 'uppercase' }}>
+                {item.name}
+              </Heading>
+
+              <Flex justifyContent='space-between' alignItems='center'>
+                <Text fontSize='sm' color='#A1A1AA'>
+                  {item.description}
+                </Text>
+                <Button
+                  _hover={{ bg: '#ebedf0' }}
+                  borderRadius={20}
+                  bg='white'
+                  color='black'
+                  p='0'
+                  h={8}
+                  w={16}>
+                  View
+                </Button>
+              </Flex>
+              <Divider orientation='horizontal' mt={3} />
+            </GridItem>
+          ))}
+        </Grid>
         {/* <Button onClick={toggleColorMode}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</Button> */}
       </Flex>
     </>
