@@ -11,7 +11,8 @@ const ChakraParagraph = chakra('p', {
 
 export const Paragraph = () => (
   <ChakraParagraph>
-    Takuya is a freelance and a full-stack developer based in Osaka with a passion for building
-    digital services/stuff he wants.
+    I am a passionate Junior full - stack developer based in Tbilisi, Georgia. Aiming on crafting
+    great - looking software products. I focus on details, accessibility and writing maintainable
+    code.
   </ChakraParagraph>
 );
