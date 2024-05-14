@@ -131,11 +131,15 @@ const outline = defineStyle({
   border: '2px solid #FAFAFA', // change the appearance of the border
   borderRadius: 'md',
   fontWeight: 'semibold', // change the font weight
-  background: 'black',
-  color: '#FAFAFA',
+  background: 'white',
+  color: 'black',
   // padding: '116px',
   // h: '22px',
   // fontSize: 'sm',
+  _dark: {
+    background: 'black',
+    color: '#FAFAFA',
+  },
 });
 
 const xl = defineStyle({
@@ -148,36 +152,40 @@ const xl = defineStyle({
   py: '111px', // <-- these values are tokens from the design system
 });
 
-const customIconButton = defineStyle({
-  border: '2px solid #FAFAFA', // change the appearance of the border
-  background: '#FAFAFA',
-  color: 'black',
-  // fontFamily: 'serif',
-  fontWeight: 'normal',
-
-  // let's also provide dark mode alternatives
-  _dark: {
-    background: 'black',
-    color: '#FAFAFA',
-  },
+export const buttonTheme = defineStyleConfig({
+  variants: { outline },
 });
 
-const buttonTheme = defineStyleConfig({
-  // variants: { outline },
-  variants: { customIconButton },
+// const customIconButton = defineStyle({
+//   border: '2px solid #FAFAFA', // change the appearance of the border
+//   background: '#FAFAFA',
+//   color: 'black',
+//   // fontFamily: 'serif',
+//   fontWeight: 'normal',
 
-  // sizes: { xl },
-});
+//   // let's also provide dark mode alternatives
+//   _dark: {
+//     background: 'black',
+//     color: '#FAFAFA',
+//   },
+// });
 
-const custom = defineStyle({
-  color: 'yellow.500',
-  fontFamily: 'mono',
-  fontWeight: 'semibold',
-  // let's also provide dark mode alternatives
-  _dark: {
-    color: 'yellow.300',
-  },
-});
+// const buttonTheme = defineStyleConfig({
+//   // variants: { outline },
+//   variants: { customIconButton },
+
+//   // sizes: { xl },
+// });
+
+// const custom = defineStyle({
+//   color: 'yellow.500',
+//   fontFamily: 'mono',
+//   fontWeight: 'semibold',
+//   // let's also provide dark mode alternatives
+//   _dark: {
+//     color: 'yellow.300',
+//   },
+// });
 
 const theme = extendTheme({
   config,
