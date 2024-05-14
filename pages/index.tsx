@@ -50,8 +50,8 @@ export default function Home() {
             onClick={toggleColorMode}
             variant='outline'
             colorScheme='gray'
-            aria-label='Sun and Moon Icons'
             fontSize='20px'
+            aria-label='Sun and Moon Icons'
             icon={colorMode === 'light' ? <FiSun /> : <FiMoon />}
           />
         </ChakraListItem>

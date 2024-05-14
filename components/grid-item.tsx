@@ -1,17 +1,15 @@
 import React from 'react';
 import NextLink from 'next/link';
 import type { Route } from 'next';
-import { Box, Text, Heading, Flex, Button, Divider, ListItem } from '@chakra-ui/react';
+import { Box, Text, Heading, Flex, Button, Divider } from '@chakra-ui/react';
 
-export default function GridItem<T extends string>({
-  name,
-  desc,
-  href,
-}: {
+type GridItemsProps<T> = {
   name: string;
   desc: string;
   href: Route<T> | URL;
-}) {
+};
+
+export default function GridItem<T>({ name, desc, href }: GridItemsProps<T>) {
   return (
     <Box w='100%' h='10' bg='black'>
       <Heading as='h2' size='md'>
