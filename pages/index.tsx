@@ -1,65 +1,39 @@
 import React from 'react';
+import { Box, Grid, List } from '@chakra-ui/react';
 
-import {
-  Box,
-  Grid,
-  List,
-  ListItem as ChakraListItem,
-  IconButton,
-  useColorMode,
-} from '@chakra-ui/react';
-
-import { FiMoon, FiSun } from 'react-icons/fi';
 import { Paragraph } from '@/components/paragraph';
 import ListItem from '@/components/list-item';
 import GridItem from '@/components/grid-item';
-import { socialAccounts } from '@/config/social';
-
-const projects = [
-  {
-    name: 'Portfolio',
-    description: 'Complete front-end ',
-    href: 'https://github.com/',
-  },
-  {
-    name: 'Favourite-Pubs',
-    description: 'Complete front-end ',
-    href: 'https://github.com/',
-  },
-  {
-    name: 'Reminder App',
-    description: 'comming soon...',
-    href: 'https://github.com/',
-  },
-];
+import { projects, socialAccounts } from '@/config/constants';
 
 export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode();
-
   return (
-    <Box display='flex' flexDir='column' h='90vh' justifyContent='center'>
-      <Paragraph />
+    <Box
+      display='flex'
+      flexDir='column'
+      h='90vh'
+      justifyContent={{ base: 'space-between', md: 'space-between', lg: 'center' }}>
+      <div>
+        <Paragraph />
 
-      <List display='flex' alignItems='end' gap={3}>
-        {socialAccounts?.map(({ ...rest }, i) => (
-          <ListItem key={i} {...rest} />
-        ))}
+        <List display='flex' alignItems='end' gap={3} mt={6}>
+          {socialAccounts?.map(({ ...items }, i) => (
+            <ListItem key={i} {...items} />
+          ))}
+        </List>
+      </div>
 
-        <ChakraListItem>
-          <IconButton
-            onClick={toggleColorMode}
-            variant='outline'
-            colorScheme='gray'
-            fontSize='20px'
-            aria-label='Sun and Moon Icons'
-            icon={colorMode === 'light' ? <FiSun /> : <FiMoon />}
-          />
-        </ChakraListItem>
-      </List>
-
-      <Grid templateColumns='repeat(2, 1fr)' gap={12} mt={16}>
-        {projects?.map((item, i) => (
-          <GridItem key={i} name={item.name} desc={item.description} href={item.href} />
+      <Grid
+        templateColumns={{
+          // base: 'repeat(1, 1fr)',
+          // sm: 'repeat(1, 1fr)',
+          md: 'repeat(2, 1fr)',
+          lg: 'repeat(2, 1fr)',
+        }}
+        gap={8}
+        mt={16}>
+        {projects?.map(({ ...items }, i) => (
+          <GridItem key={i} {...items} />
         ))}
       </Grid>
     </Box>

@@ -9,9 +9,9 @@ type GridItemsProps<T> = {
   href: Route<T> | URL;
 };
 
-export default function GridItem<T>({ name, desc, href }: GridItemsProps<T>) {
+export default function GridItem<T extends string>({ name, desc, href }: GridItemsProps<T>) {
   return (
-    <Box w='100%' h='10' bg='black'>
+    <Box w='100%' h='10'>
       <Heading as='h2' size='md'>
         {name}
       </Heading>
@@ -21,14 +21,7 @@ export default function GridItem<T>({ name, desc, href }: GridItemsProps<T>) {
           {desc}
         </Text>
         <NextLink href={href} target='_blank'>
-          <Button
-            _hover={{ bg: '#ebedf0' }}
-            borderRadius={20}
-            bg='white'
-            color='black'
-            p='0'
-            h={8}
-            w={16}>
+          <Button variant='solid' size='lg'>
             View
           </Button>
         </NextLink>
