@@ -38,7 +38,7 @@ export const projects = [
   },
   {
     name: 'Reminder App',
-    desc: 'A reminder app built Created with Next.js, Typescript, Sql, Prisma, Tailwincss, Clerk.js for authentication',
+    desc: 'A reminder app, created with Next.js, Typescript, Sql, Prisma, Tailwincss and Clerk.js for authentication',
     href: 'https://github.com/dieetcola/remindme-app',
   },
 ];

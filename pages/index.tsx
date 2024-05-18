@@ -2,8 +2,8 @@ import React from 'react';
 import { Box, Grid, List } from '@chakra-ui/react';
 
 import { Paragraph } from '@/components/paragraph';
-import ListItem from '@/components/list-item';
-import GridItem from '@/components/grid-item';
+import { ListItem } from '@/components/list-item';
+import { GridItem } from '@/components/grid-item';
 import { projects, socialAccounts } from '@/config/constants';
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       display='flex'
       flexDir='column'
       h='90vh'
-      justifyContent={{ base: 'space-between', md: 'space-between', lg: 'center' }}>
+      justifyContent={{ base: 'space-between', md: 'center' }}>
       <div>
         <Paragraph />
 
@@ -23,15 +23,7 @@ export default function Home() {
         </List>
       </div>
 
-      <Grid
-        templateColumns={{
-          // base: 'repeat(1, 1fr)',
-          // sm: 'repeat(1, 1fr)',
-          md: 'repeat(2, 1fr)',
-          lg: 'repeat(2, 1fr)',
-        }}
-        gap={8}
-        mt={16}>
+      <Grid templateColumns={{ lg: 'repeat(2, 1fr)' }} gap={12} mt={16}>
         {projects?.map(({ ...items }, i) => (
           <GridItem key={i} {...items} />
         ))}
