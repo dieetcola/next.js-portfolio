@@ -16,7 +16,7 @@ export default function Home() {
       <div>
         <Paragraph />
 
-        <List display='flex' alignItems='end' gap={3} mt={6}>
+        <List display='flex' alignItems='end' gap={2} mt={6}>
           {socialAccounts?.map(({ ...items }, i) => (
             <ListItem key={i} {...items} />
           ))}

@@ -47,7 +47,7 @@ const Button = defineStyleConfig({
       py: 3,
     },
     md: {
-      fontSize: 'lg',
+      fontSize: 'md',
       px: '12',
       p: 12,
       py: 4,
@@ -56,7 +56,7 @@ const Button = defineStyleConfig({
   variants: {
     outline: {
       border: '2px solid',
-      borderColor: '#d4d4d8',
+      borderColor: '#f5f0f0',
       color: 'black',
       _dark: {
         background: 'RGBA(0, 0, 0, 0.36)',
@@ -67,7 +67,7 @@ const Button = defineStyleConfig({
         },
       },
       _hover: {
-        bg: 'gray.400',
+        bg: '#f3f4f6',
       },
     },
     solid: {

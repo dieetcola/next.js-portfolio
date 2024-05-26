@@ -6,7 +6,7 @@ export const ListItem = (props: IconButtonProps & LinkProps) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box display='flex' alignItems='end' gap={3}>
+    <Box display='flex' alignItems='end'>
       {props.title === 'Toggle' ? (
         <IconButton
           onClick={toggleColorMode}
