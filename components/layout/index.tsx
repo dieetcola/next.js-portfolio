@@ -1,15 +1,11 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { Box, Container } from '@chakra-ui/react';
 
-interface PropsInterface {
-  children: React.ReactNode;
-}
-
-export const Layout = (props: PropsInterface): JSX.Element => {
+export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <Box as='main'>
       <Container maxW='71em' mb='10px' mt={{ sm: 10, lg: 0 }}>
-        {props.children}
+        {children}
       </Container>
     </Box>
   );
