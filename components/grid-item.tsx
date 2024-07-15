@@ -9,7 +9,7 @@ type GridItemsProps<T> = {
   href: Route<T> | URL;
 };
 
-export const GridItem = <T extends string>({ name, desc, href }: GridItemsProps<T>) => {
+export function GridItem<T extends string>({ name, desc, href }: GridItemsProps<T>) {
   return (
     <Box w='100%' h='10'>
       <Heading as='h2' size='sm'>
@@ -29,4 +29,4 @@ export const GridItem = <T extends string>({ name, desc, href }: GridItemsProps<
       <Divider orientation='horizontal' mt={3} />
     </Box>
   );
-};
+}

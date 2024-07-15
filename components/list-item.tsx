@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, IconButton, IconButtonProps, useColorMode, Link, LinkProps } from '@chakra-ui/react';
 import { FiMoon, FiSun } from 'react-icons/fi';
 
-export const ListItem = (props: IconButtonProps & LinkProps) => {
+export function ListItem(props: IconButtonProps & LinkProps) {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
@@ -20,4 +20,4 @@ export const ListItem = (props: IconButtonProps & LinkProps) => {
       )}
     </Box>
   );
-};
+}

@@ -41,4 +41,9 @@ export const projects = [
     desc: 'A reminder app, created with Next.js, Typescript, Sql, Prisma, Tailwincss and Kinde for authentication',
     href: 'https://github.com/dieetcola/reminder-app',
   },
+  {
+    name: 'Marvel Comics',
+    desc: 'A reminder app, created with Vue.js, Vue Router, Typescript and Tailwind CSS',
+    href: 'https://github.com/dieetcola/vue-marvel',
+  },
 ];

@@ -9,10 +9,12 @@ const ChakraParagraph = chakra('p', {
   },
 });
 
-export const Paragraph = () => (
-  <ChakraParagraph>
-    Hey there! Let&apos;s get straight to it! I&apos;m Irakli, a motivated web developer based in
-    Tbilisi. I&apos;m building cutting - edge web applications using the latest technologies such as
-    React.js, Next.js, TypeScript, and much more for almost 1 year.
-  </ChakraParagraph>
-);
+export function Paragraph() {
+  return (
+    <ChakraParagraph>
+      Hey there! Let&apos;s get straight to it! I&apos;m Irakli, a motivated web developer based in
+      Tbilisi. I&apos;m building cutting - edge web applications using the latest technologies such
+      as React.js, Next.js, TypeScript, and much more for almost 1 year.
+    </ChakraParagraph>
+  );
+}
